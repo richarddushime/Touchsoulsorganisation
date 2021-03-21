@@ -13,25 +13,24 @@ $name     = $_POST['Name'];
 $email    = $_POST['email'];
 $phone   = $_POST['phone'];
 $message = $_POST['message'];
-$verify   = $_POST['verify'];
 
 if(trim($name) == '') {
-	echo '<div class="error_message">Attention! You must enter your name.</div>';
+	echo '<div id="name_error">Attention! You must enter your name.</div>';
 	exit();
 }  else if(trim($email) == '') {
-	echo '<div class="error_message">Attention! Please enter a valid email address.</div>';
+	echo '<div id="email_error">Attention! Please enter a valid email address.</div>';
 	exit();
 } else if(!isEmail($email)) {
-	echo '<div class="error_message">Attention! You have enter an invalid e-mail address, try again.</div>';
+	echo '<div id="email_error">Attention! You have enter an invalid e-mail address, try again.</div>';
 	exit();
 }else if(trim($phone) == '') {
 	if(isNaN($phone)){
-		echo '<div class="error_message">Attention! You have enter an invalid  number, try again.</div>';
+		echo '<div id="phone_error">Attention! You have enter an invalid  number, try again.</div>';
 		exit();
 	  }
 
 if(trim($message) == '') {
-	echo '<div class="error_message">Attention! Please enter your message.</div>';
+	echo '<div id="error_message">Attention! Please enter your message.</div>';
 	exit();
 }
 
